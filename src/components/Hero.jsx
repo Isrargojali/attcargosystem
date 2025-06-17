@@ -20,7 +20,7 @@ const Hero = () => {
 
   const handleTrack = () => {
     if (trackingNumber.trim() !== "") {
-      navigate(`/track-cargo/${trackingNumber}`);
+      window.open("https://www.weboc.gov.pk/", "_blank");
     } else {
       setShowAlert(true);
     }
@@ -32,7 +32,7 @@ const Hero = () => {
         Global Trade Made Simple
       </h1>
       <p className="text-lg md:text-xl text-[#6C7A89] mt-4 max-w-xl">
-        Baba International Traders ensures secure cargo tracking, fast customs clearance, and efficient global logistics.
+        BABA INTERNATIONAL Traders (SMC-Private) Limited ensures secure cargo tracking, fast customs clearance, and efficient global logistics.
       </p>
 
       {/* Alert Message */}
@@ -65,7 +65,7 @@ const Hero = () => {
       {/* CTA Buttons */}
       <div className="mt-6 flex flex-col sm:flex-row gap-4 w-full max-w-md">
         <Button
-          onClick={() => navigate("/track-cargo")}
+          onClick={() => window.open("https://www.weboc.gov.pk/", "_blank")}
           className="bg-[#008CBA] text-white hover:bg-[#0077a8] w-full sm:w-auto cursor-pointer"
         >
           Track Your Shipment

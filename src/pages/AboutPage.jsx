@@ -10,9 +10,7 @@ import image3 from '../assets/about1.jpg';
 import { Package, Users, Laptop, Truck, CheckCircle, Shield, DollarSign } from 'lucide-react';
 
 const teamMembers = [
-  { image: person1, name: "John Doe", position: "CEO" },
-  { image: person2, name: "Jane Smith", position: "COO" },
-  { image: person3, name: "Michael Lee", position: "Head of Operations" },
+  { image: person1, name: "Saeed Hussain", position: "CEO" }
 ];
 
 const values = [
@@ -48,6 +46,16 @@ const About = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-2 lg:px-12">
+        <div className="container mx-auto px-4 py-16">
+          <div className="text-center max-w-4xl mx-auto">
+            <h1 className="text-4xl font-bold text-[#2C3E50] mb-6">About BABA INTERNATIONAL</h1>
+            <p className="text-lg text-[#6C7A89] mb-12">
+              BABA INTERNATIONAL Traders (SMC-Private) Limited, under the leadership of our CEO Saeed Hussain, 
+              has established itself as a premier logistics and international trade facilitator in the Gilgit-Baltistan region.
+            </p>
+          </div>
+        </div>
+
         {/* Who We Are Section */}
         <div className="mt-16 flex flex-col md:flex-row items-center gap-16">
           <div className="md:w-1/2">

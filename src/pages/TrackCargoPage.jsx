@@ -11,32 +11,8 @@ const TrackCargo = () => {
       setCargoDetails(null);
       return;
     }
-
-    // Simulate fetching data
-    const sampleData = {
-      id: trackingId,
-      status: "In Transit",
-      estimatedDelivery: "April 7, 2025",
-      origin: "Gilgit, Pakistan",
-      destination: "Dubai, UAE",
-      currentLocation: "Islamabad Hub",
-      weight: "120kg",
-      trackingHistory: [
-        { date: "March 28, 2025", event: "Shipment received at origin" },
-        { date: "March 30, 2025", event: "Departed from origin" },
-        { date: "April 3, 2025", event: "Arrived at destination hub" },
-        { date: "April 5, 2025", event: "Out for delivery" },
-      ],
-      additionalInfo: {
-        carrier: "XYZ Logistics",
-        contactNumber: "+1234567890",
-        customsCleared: true,
-        deliveryTime: "10:00 AM - 12:00 PM",
-      },
-    };
-
-    setCargoDetails(sampleData);
-    setError("");
+    // Redirect to government portal
+    window.open("https://www.weboc.gov.pk/", "_blank");
   };
 
   return (
@@ -95,6 +71,19 @@ const TrackCargo = () => {
             </div>
           </div>
         )}
+      </div>
+
+      {/* Government Portal Tracking */}
+      <div className="mt-8 text-center">
+        <p className="mb-2 text-gray-700">Want to track your shipment via the official government portal?</p>
+        <a
+          href="https://www.weboc.gov.pk/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-green-600 text-white px-6 py-3 rounded-md hover:bg-green-700 transition"
+        >
+          Track via Government Portal
+        </a>
       </div>
     </div>
   );

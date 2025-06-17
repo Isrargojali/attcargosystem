@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 
 const ContactUs = () => {
   const [name, setName] = useState("");
@@ -113,15 +114,38 @@ const ContactUs = () => {
       <div className="max-w-4xl mx-auto mt-12 text-center text-gray-700">
         <h3 className="text-2xl font-semibold text-[#2C3E50]">Our Office Information</h3>
         <p className="mt-4">Feel free to contact us through any of the following methods:</p>
-        <div className="mt-6 space-y-4">
-          <div>
-            <strong className="text-[#2C3E50]">Phone:</strong> +1 (800) 123-4567
+        <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Phone */}
+          <div className="flex flex-col items-center p-6 bg-white rounded-lg shadow-md">
+            <FaPhone className="text-4xl text-[#008CBA] mb-4" />
+            <h3 className="text-xl font-semibold mb-2">Phone</h3>
+            <p className="text-gray-600 text-center">
+              <a href="tel:+923455326201" className="hover:text-[#008CBA]">+92 345 5326201</a>
+            </p>
+            <p className="text-gray-600 text-center">
+              <a href="tel:+923555313913" className="hover:text-[#008CBA]">+92 355 5313913</a>
+            </p>
           </div>
-          <div>
-            <strong className="text-[#2C3E50]">Email:</strong> support@yourcompany.com
+
+          {/* Email */}
+          <div className="flex flex-col items-center p-6 bg-white rounded-lg shadow-md">
+            <FaEnvelope className="text-4xl text-[#008CBA] mb-4" />
+            <h3 className="text-xl font-semibold mb-2">Email</h3>
+            <p className="text-gray-600 text-center">
+              <a href="mailto:saeed.hussain@babainternationaltraders.com" className="hover:text-[#008CBA]">
+                saeed.hussain@babainternationaltraders.com
+              </a>
+            </p>
           </div>
-          <div>
-            <strong className="text-[#2C3E50]">Address:</strong> 123 Main Street, Suite 101, City, State, 12345
+
+          {/* Address */}
+          <div className="flex flex-col items-center p-6 bg-white rounded-lg shadow-md">
+            <FaMapMarkerAlt className="text-4xl text-[#008CBA] mb-4" />
+            <h3 className="text-xl font-semibold mb-2">Address</h3>
+            <p className="text-gray-600 text-center">
+              Affyatabad Sost Gojal Hunza<br />
+              Gilgit-Baltistan
+            </p>
           </div>
         </div>
       </div>

@@ -11,9 +11,9 @@ const WhoWeAre = () => {
                   <div className="md:w-1/2">
                     <h2 className="text-4xl font-bold text-gray-900">Who We Are</h2>
                     <p className="mt-6 text-gray-700 leading-relaxed">
-                      Baba International Traders is a leading provider of logistics and global trade solutions.
-                      With years of expertise, we ensure secure cargo tracking, efficient customs clearance, and
-                      seamless global shipments. Our mission is to connect businesses worldwide with reliable and
+                      BABA INTERNATIONAL Traders (SMC-Private) Limited is a leading provider of logistics and global trade solutions.
+                      Based in Affyatabad Sost Gojal Hunza Gilgit-Baltistan, and led by our CEO Saeed Hussain, we ensure secure cargo tracking, 
+                      efficient customs clearance, and seamless global shipments. Our mission is to connect businesses worldwide with reliable and
                       cost-effective logistics services.
                     </p>
                   </div>

@@ -20,12 +20,14 @@ const ServicesHero = () => {
           </Link>
 
           {/* Track Cargo Button */}
-          <Link
-            to="/track-cargo"
+          <a
+            href="https://www.weboc.gov.pk/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block bg-[#2C3E50] text-white px-6 py-3 rounded-md shadow-md hover:bg-[#1a2733] transition duration-300"
           >
             Track Cargo
-          </Link>
+          </a>
         </div>
       </div>
     </section>

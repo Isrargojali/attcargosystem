@@ -11,8 +11,8 @@ const TrackTools = () => {
   // Handle form submissions
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Simulate a function that searches for tracking information
-    alert("Tracking data submitted. Check results.");
+    // Redirect to government portal
+    window.open("https://www.weboc.gov.pk/", "_blank");
   };
 
   return (
@@ -124,6 +124,19 @@ const TrackTools = () => {
         <button className="mt-6 px-8 py-4 bg-white text-yellow-500 font-semibold rounded-md shadow-md hover:bg-gray-100 transform transition duration-300 hover:scale-105">
           <Link to="/contact">Contact Us</Link>
         </button>
+      </div>
+
+      {/* Government Portal Tracking */}
+      <div className="mt-10 text-center">
+        <p className="mb-2 text-gray-700">Want to track your shipment via the official government portal?</p>
+        <a
+          href="https://www.weboc.gov.pk/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-green-600 text-white px-6 py-3 rounded-md hover:bg-green-700 transition"
+        >
+          Track via Government Portal
+        </a>
       </div>
     </div>
   );

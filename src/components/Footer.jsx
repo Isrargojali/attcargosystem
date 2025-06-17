@@ -13,7 +13,7 @@ const Footer = () => {
           <div>
             <h2 className="text-2xl font-bold mb-4">About Us</h2>
             <p className="text-gray-300">
-              Baba International Traders is your trusted partner in global trade, offering **cargo tracking, import/export solutions, logistics, and customs clearance** to streamline your shipments.
+              BABA INTERNATIONAL Traders (SMC-Private) Limited is your trusted partner in global trade, offering cargo tracking, import/export solutions, logistics, and customs clearance to streamline your shipments.
             </p>
           </div>
 
@@ -63,15 +63,19 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-center">
                 <FaPhone className="mr-2 text-yellow-400" />
-                <a href="tel:+1234567890" className="hover:text-yellow-400">+1 234 567 890</a>
+                <a href="tel:+923455326201" className="hover:text-yellow-400">+92 345 5326201</a>
+              </li>
+              <li className="flex items-center">
+                <FaPhone className="mr-2 text-yellow-400" />
+                <a href="tel:+923555313913" className="hover:text-yellow-400">+92 355 5313913</a>
               </li>
               <li className="flex items-center">
                 <FaEnvelope className="mr-2 text-yellow-400" />
-                <a href="mailto:info@babatraders.com" className="hover:text-yellow-400">info@babatraders.com</a>
+                <a href="mailto:saeed.hussain@babainternationaltraders.com" className="hover:text-yellow-400">saeed.hussain@babainternationaltraders.com</a>
               </li>
               <li className="flex items-center">
                 <FaMapMarkerAlt className="mr-2 text-yellow-400" />
-                <span>123 Trade Street, New York, USA</span>
+                <span>Affyatabad Sost Gojal Hunza Gilgit-Baltistan</span>
               </li>
             </ul>
           </div>
@@ -87,7 +91,7 @@ const Footer = () => {
               placeholder="Enter Tracking Number"
               className="p-2 rounded-l-lg text-black bg-white "
             />
-            <button  onClick={() => navigate('/track-cargo')} className="cursor-pointer bg-yellow-400 text-black px-4 py-2 rounded-r-lg hover:bg-yellow-500">
+            <button  onClick={() => window.open("https://www.weboc.gov.pk/", "_blank")} className="cursor-pointer bg-yellow-400 text-black px-4 py-2 rounded-r-lg hover:bg-yellow-500">
               Track Now <FaShippingFast className="inline ml-2" />
             </button>
           </div>
@@ -101,7 +105,7 @@ const Footer = () => {
             <a href="#" className="hover:text-yellow-400 text-xl"><FaLinkedin /></a>
           </div>
           <p className="text-gray-300 mt-4 md:mt-0">
-            &copy; {new Date().getFullYear()} Baba International Traders. All rights reserved.
+            &copy; {new Date().getFullYear()} BABA INTERNATIONAL Traders (SMC-Private) Limited. All rights reserved.
           </p>
         </div>
       </div>
