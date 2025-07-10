@@ -3,14 +3,14 @@ import { useNavigate } from "react-router-dom";
 import ImageSection from "../components/ImageSection";
 import aboutImg from '../assets/about.jpg';
 import person1 from '../assets/person1.jpg';
-import person2 from '../assets/person3.jpg';
-import person3 from '../assets/person2.jpg';
+import person2 from '../assets/person2.png';
 import heroImg from '../assets/hero.jpg';
 import image3 from '../assets/about1.jpg';
 import { Package, Users, Laptop, Truck, CheckCircle, Shield, DollarSign } from 'lucide-react';
 
 const teamMembers = [
-  { image: person1, name: "Saeed Hussain", position: "CEO" }
+  { image: person1, name: "Saeed Hussain", position: "CEO" },
+  { image: person2, name: "Mohsin Hassan Khan", position: "Costum Clearance Manager" }
 ];
 
 const values = [

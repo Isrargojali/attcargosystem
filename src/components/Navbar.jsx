@@ -56,7 +56,7 @@ const Navbar = () => {
               </NavLink>
             </li>
           ))}
-          <li className="py-2 md:py-0">
+          {/* <li className="py-2 md:py-0">
             <NavLink
               to="/login"
               className="bg-[#008CBA] px-6 py-2 rounded-md text-white hover:bg-[#0077a8] transition"
@@ -73,7 +73,7 @@ const Navbar = () => {
             >
               Sign Up
             </NavLink>
-          </li>
+          </li> */}
         </ul>
       </div>
     </nav>
