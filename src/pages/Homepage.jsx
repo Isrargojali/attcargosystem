@@ -13,7 +13,7 @@ const Homepage = () => {
     <Hero />
     <About />
     <Services />
-    <TrackCargo />
+    {/* <TrackCargo /> */}
     <TrackTools />
     <ContactUs />
     

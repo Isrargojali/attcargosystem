@@ -1,81 +1,104 @@
-import React, { useState } from "react";
-import { FaShippingFast } from "react-icons/fa";
+import React, { useState, useEffect } from "react";
+// eslint-disable-next-line no-unused-vars
+import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
-const Button = ({ onClick, children, className }) => {
-  return (
-    <button
-      onClick={onClick}
-      className={`px-6 py-3 rounded-md text-lg font-semibold transition-all duration-300 ease-in-out ${className}`}
-    >
-      {children}
-    </button>
-  );
-};
+import slide1 from "../assets/slide1.jpg";
+import slide2 from "../assets/slide2.jpg";
+import slide3 from "../assets/slide3.jpg";
+
+const images = [slide1, slide2, slide3];
 
 const Hero = () => {
-  const [trackingNumber, setTrackingNumber] = useState("");
-  const [showAlert, setShowAlert] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
   const navigate = useNavigate();
 
-  const handleTrack = () => {
-    if (trackingNumber.trim() !== "") {
-      window.open("https://www.weboc.gov.pk/", "_blank");
-    } else {
-      setShowAlert(true);
-    }
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % images.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % images.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + images.length) % images.length);
   };
 
   return (
-    <div className="flex flex-col items-center text-center px-6 py-12 md:py-20 bg-white">
-      <h1 className="text-4xl md:text-5xl font-bold text-[#2C3E50]">
-        Global Trade Made Simple
-      </h1>
-      <p className="text-lg md:text-xl text-[#6C7A89] mt-4 max-w-xl">
-        BABA INTERNATIONAL Traders (SMC-Private) Limited ensures secure cargo tracking, fast customs clearance, and efficient global logistics.
-      </p>
-
-      {/* Alert Message */}
-      {showAlert && (
-        <div className="mt-4 bg-red-500 text-white px-4 py-2 rounded-md flex justify-between items-center w-full max-w-md">
-          <span>Please enter a valid tracking number!</span>
-          <button onClick={() => setShowAlert(false)} className="text-lg font-bold ml-4">
-            ✖
-          </button>
-        </div>
-      )}
-
-      {/* Tracking Input */}
-      <div className="mt-6 flex flex-col sm:flex-row items-center w-full max-w-xl">
-        <input
-          type="text"
-          placeholder="🔍 Enter Tracking Number"
-          className="p-4 rounded-md sm:rounded-l-md sm:rounded-r-none text-black w-full sm:w-[400px] border border-gray-300 bg-white focus:outline-none focus:ring-2 focus:ring-[#008CBA] text-lg placeholder-gray-600"
-          value={trackingNumber}
-          onChange={(e) => setTrackingNumber(e.target.value)}
+    <div className="relative min-h-[80vh] w-full overflow-hidden flex items-center justify-center">
+      {/* Image Slides */}
+      {images.map((img, index) => (
+        <img
+          key={index}
+          src={img}
+          alt={`Slide ${index + 1}`}
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${
+            currentSlide === index ? "opacity-100 z-0" : "opacity-0 z-[-1]"
+          }`}
         />
-        <Button
-          onClick={handleTrack}
-          className="bg-[#008CBA] text-white px-10 py-4 sm:rounded-r-md sm:rounded-l-none hover:bg-[#0077a8] flex items-center justify-center w-full sm:w-[200px] cursor-pointer"
+      ))}
+
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-black/50 z-10" />
+
+      {/* Content */}
+      <div className="relative z-20 flex flex-col items-center justify-center text-center text-white px-4 sm:px-6 py-12">
+        <motion.h1
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-3xl sm:text-5xl md:text-6xl font-bold drop-shadow-lg leading-tight"
         >
-          Track Now <FaShippingFast className="ml-2" />
-        </Button>
+          Baba International
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.8 }}
+          className="text-base sm:text-lg md:text-2xl mt-4 max-w-xl drop-shadow-md"
+        >
+          Global logistics made simple. Reliable shipping, smart clearance, and seamless trade.
+        </motion.p>
+        <motion.button
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.6, duration: 0.5 }}
+          onClick={() => navigate("/services")}
+          className="mt-8 px-6 py-3 sm:px-8 sm:py-3 bg-white text-black text-base sm:text-lg font-semibold rounded-full hover:bg-gray-100 transition"
+        >
+          Explore Services
+        </motion.button>
       </div>
 
-      {/* CTA Buttons */}
-      <div className="mt-6 flex flex-col sm:flex-row gap-4 w-full max-w-md">
-        <Button
-          onClick={() => window.open("https://www.weboc.gov.pk/", "_blank")}
-          className="bg-[#008CBA] text-white hover:bg-[#0077a8] w-full sm:w-auto cursor-pointer"
-        >
-          Track Your Shipment
-        </Button>
-        <Button
-          onClick={() => navigate("/services")}
-          className="bg-[#6C7A89] text-white hover:bg-[#5a6876] w-full sm:w-auto cursor-pointer"
-        >
-          Explore Our Services
-        </Button>
+      {/* Arrows */}
+      <button
+        onClick={prevSlide}
+        className="absolute left-3 sm:left-5 top-1/2 z-30 -translate-y-1/2 text-white text-2xl sm:text-3xl font-bold bg-black bg-opacity-30 hover:bg-opacity-60 p-2 sm:p-3 rounded-full"
+      >
+        ❮
+      </button>
+      <button
+        onClick={nextSlide}
+        className="absolute right-3 sm:right-5 top-1/2 z-30 -translate-y-1/2 text-white text-2xl sm:text-3xl font-bold bg-black bg-opacity-30 hover:bg-opacity-60 p-2 sm:p-3 rounded-full"
+      >
+        ❯
+      </button>
+
+      {/* Pagination Dots */}
+      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-2 sm:gap-3 z-30">
+        {images.map((_, index) => (
+          <div
+            key={index}
+            onClick={() => setCurrentSlide(index)}
+            className={`w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full cursor-pointer transition-transform ${
+              currentSlide === index ? "bg-white scale-110" : "bg-white/50"
+            }`}
+          />
+        ))}
       </div>
     </div>
   );

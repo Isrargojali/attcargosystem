@@ -2,15 +2,17 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import ImageSection from "../components/ImageSection";
 import aboutImg from '../assets/about.jpg';
-import person1 from '../assets/person1.jpg';
-import person2 from '../assets/person2.png';
+import person1 from '../assets/person4.png';
+import person2 from '../assets/person5.png';
+import person3 from '../assets/person6.png';
 import heroImg from '../assets/hero.jpg';
 import image3 from '../assets/about1.jpg';
 import { Package, Users, Laptop, Truck, CheckCircle, Shield, DollarSign } from 'lucide-react';
 
 const teamMembers = [
   { image: person1, name: "Saeed Hussain", position: "CEO" },
-  { image: person2, name: "Mohsin Hassan Khan", position: "Costum Clearance Manager" }
+  { image: person2, name: "Mohsin Hassan Khan", position: "Custom Clearance Manager" },
+  { image: person3, name: "Israr Ahmed", position: "Technical Consultant" }
 ];
 
 const values = [
@@ -48,7 +50,9 @@ const About = () => {
       <div className="max-w-7xl mx-auto px-2 lg:px-12">
         <div className="container mx-auto px-4 py-16">
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl font-bold text-[#2C3E50] mb-6">About BABA INTERNATIONAL</h1>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#2C3E50] mb-4 sm:mb-6 text-center">
+  About BABA INTERNATIONAL
+</h1>
             <p className="text-lg text-[#6C7A89] mb-12">
               BABA INTERNATIONAL Traders (SMC-Private) Limited, under the leadership of our CEO Saeed Hussain, 
               has established itself as a premier logistics and international trade facilitator in the Gilgit-Baltistan region.
@@ -144,7 +148,7 @@ const About = () => {
                   <img
                     src={member.image}
                     alt={member.name}
-                    className="w-full p-4 h-64 object-cover"
+                    className="w-full p-4 h-auto object-cover"
                   />
                   <div className="p-4 sm:p-6">
                     <h3 className="text-lg sm:text-xl font-semibold text-[#2C3E50]">
